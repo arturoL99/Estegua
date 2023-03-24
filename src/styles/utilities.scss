@@ -1,7 +1,33 @@
-.test{
-    height: 200vh;
+h1{
+    font-size: 3rem;
 }
 
-.hide{
-    display: none;
+.test{
+    height: 200vh;
+    width: 100vw;
+    display: flex;
+}
+
+.sidebar{
+    width: 15%;
+    border: 1px solid beige;
+}
+
+// .hide{
+//     display: none;
+// }
+
+.m{
+    &t-50{
+        margin-top: 50px;
+    }
+    &y-20{
+        margin: 20px 0;
+    }
+    &y-10{
+        margin: 10px 0;
+    }
+    &y-5{
+        margin: 5px 0;
+    }
 }

@@ -3,23 +3,22 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import Header from '@/components/Header/Header'
 import contentfulClient from '@/client/ContentfulClient'
-import { mapBlogs } from '@/utils/BlogUtils'
-import { Blog } from '@/types/Blog'
+import { mapCourses } from '@/utils/CourseUtils'
+import { Course } from '@/types/Course'
+import CoursesContainer from '@/components/Courses/CoursesContainer'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export async function getStaticProps() {
-  const contentfulBlog:any = await contentfulClient.getEntries({
-    content_type: "blog",
+  const contentfulCourses:any = await contentfulClient.getEntries({
+    content_type: "course",
   }).then((res) => res.items)
-  console.log("================", contentfulBlog);
-  const blogs:Blog[] = mapBlogs(contentfulBlog);
-  // const projects = mapBlog(contentfulBlog);
-  return { props: { blogs } };
+  const courses:Course[] = mapCourses(contentfulCourses);
+  return { props: { courses } };
 }
 
-export default function Home(props: { blogs:any }) {
-  console.log(props.blogs);
+function Courses(props: { courses:Course[] }) {
+  console.log(props.courses);
   return (
     <>
       <Head>
@@ -31,12 +30,12 @@ export default function Home(props: { blogs:any }) {
       <main className="main">
         <Header />
         <div className="test">
-          <div className="courses">
-
-          </div>
+          <CoursesContainer courses={props.courses} />
           <div className="sidebar"></div>
         </div>
       </main>
     </>
   )
 }
+
+export default Courses;

@@ -35,7 +35,7 @@ const Header = () => {
                         <Image src={course} alt="courses" className="header_img" />
                         <h3 className={open ? "" : "hide"}>Courses</h3>
                     </div>
-                    <div className="header_category">
+                    <div className={open ? "header_category mt-50" : "header_category"}>
                         <Image src={course} alt="courses" className="header_img" />
                         <h3 className={open ? "" : "hide"}>Estegua U.L.</h3>
                     </div>
