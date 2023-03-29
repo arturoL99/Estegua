@@ -5,21 +5,27 @@ import Header from '@/components/Header/Header'
 import contentfulClient from '@/client/ContentfulClient'
 import { mapBlogs } from '@/utils/BlogUtils'
 import { Blog } from '@/types/Blog'
+import CoursesContainer from '@/components/Courses/CoursesContainer'
+import { Course } from '@/types/Course'
+import { mapCourses } from '@/utils/CourseUtils'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export async function getStaticProps() {
-  const contentfulBlog:any = await contentfulClient.getEntries({
-    content_type: "blog",
-  }).then((res) => res.items)
-  console.log("================", contentfulBlog);
-  const blogs:Blog[] = mapBlogs(contentfulBlog);
+  // const contentfulBlog: any = await contentfulClient.getEntries({
+  //   content_type: "blog",
+  // }).then((res) => res.items)
+  // console.log("================", contentfulBlog);
+  // const blogs: Blog[] = mapBlogs(contentfulBlog);
   // const projects = mapBlog(contentfulBlog);
-  return { props: { blogs } };
+  const contentfulCourses:any = await contentfulClient.getEntries({
+    content_type: "course",
+  }).then((res) => res.items)
+  const courses:Course[] = mapCourses(contentfulCourses);
+  return { props: { courses } };
 }
 
-export default function Home(props: { blogs:any }) {
-  console.log(props.blogs);
+export default function Home(props: { courses: Course[] }) {
   return (
     <>
       <Head>
@@ -31,9 +37,7 @@ export default function Home(props: { blogs:any }) {
       <main className="main">
         <Header />
         <div className="test">
-          <div className="courses">
-
-          </div>
+          <CoursesContainer courses={props.courses} />
           <div className="sidebar"></div>
         </div>
       </main>
