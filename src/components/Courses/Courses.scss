@@ -1,5 +1,5 @@
 .courses {
-    width: 85%;
+    width: 100%;
     border: 1px solid beige;
     background-color: #e0dfe1;
     display: flex;
@@ -43,11 +43,11 @@
         align-items: center;
 
         a {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             padding: 10px 30px;
-            border: 1px solid black;
+            border: 1px solid #0689b2;
             border-radius: 10px;
-            background-color: black;
+            background-color: #0689b2;
             color: beige;
             transition: all 400ms ease-in-out;
 
@@ -91,7 +91,7 @@
     transition-duration: 600ms;
     transition-timing-function: ease;
     background: linear-gradient(transparent,
-            black,
+            #0689b2,
             transparent);
     opacity: 0;
 }

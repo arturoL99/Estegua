@@ -14,7 +14,8 @@ export const mapCourses = (contentfulCourses: any[]) => {
         },
         description: contentfulCourse.fields.description,
         button: contentfulCourse.fields.button,
-        requirements: contentfulCourse.fields.requirements
+        requirements: contentfulCourse.fields.requirements,
+        price: contentfulCourse.fields.price
       };
       courses.push(course);
     });
@@ -30,7 +31,8 @@ export const mapCourses = (contentfulCourses: any[]) => {
       },
       description: "contentfulCourse.fields.content",
       button: "contentfulCourse.fields.button",
-      requirements: "contentfulCourse.fields.requirements"
+      requirements: "contentfulCourse.fields.requirements",
+      price: "contentfulCourse.fields.price"
     }];
     return courses;
   }

@@ -6,5 +6,6 @@ export type Course = {
     description: any;
     image: ContentfulImg;
     button:string;
-    requirements:string
+    requirements:string;
+    price:string;
   };

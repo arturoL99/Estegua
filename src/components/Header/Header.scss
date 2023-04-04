@@ -2,10 +2,11 @@
     position: fixed;
     top: 0;
     width: 100vw;
-    background-image: url("../../images/headerBg.webp");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    // background-image: url("../../images/headerBg.webp");
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    // background-position: 60% 53%;
+    background: url("../../images/headerBg.webp") no-repeat 50% 53%;
     z-index: 10;
     transition: all 0.5s ease-in-out;
 
@@ -19,6 +20,7 @@
 
     &_logo {
         position: absolute;
+
         transition: all 0.5s ease-in-out;
 
         &_container {
@@ -29,14 +31,18 @@
         }
 
         &_open {
-            top: 30%;
+            top: 50%;
             left: 50%;
+            height: 200px;
+            width: auto;
             transform: translate(-50%, -50%);
         }
 
         &_close {
             top: 50%;
             left: 10%;
+            height: 100px;
+            width: auto;
             transform: translate(-50%, -50%);
         }
 
@@ -63,12 +69,12 @@
         }
     }
 
-    &_img{
-        width: 50px;
+    &_img {
+        width: 100px;
         height: auto;
     }
 
-    &_category{
+    &_category {
         // border: 1px solid red;
         display: flex;
         flex-direction: column;

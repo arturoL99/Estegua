@@ -20,7 +20,7 @@ const Courses: FC<Props> = ({ course }) => {
                     </div>
                 </div>
                 <div className="course_cta">
-                    <Link href={course.url} className="my-5">{course.button}</Link>
+                    <Link href={course.url} className="my-20">{course.button}</Link>
                     <small>{course.requirements}</small>
                 </div>
             </div>

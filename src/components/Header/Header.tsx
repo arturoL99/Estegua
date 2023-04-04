@@ -1,7 +1,9 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import logo from "../../images/logo.png";
-import course from "../../images/course.png";
+import logo from "../../images/logo.webp";
+import discovery from "../../images/DISCOVERY.png";
+import el from "../../images/EL.png";
+import energy from "../../images/ENERGYWORK.png";
 
 const Header = () => {
     const [open, setOpen] = useState(true);
@@ -32,16 +34,13 @@ const Header = () => {
 
                 <div className={open ? "header_options header_options_open" : "header_options header_options_close"}>
                     <div className="header_category">
-                        <Image src={course} alt="courses" className="header_img" />
-                        <h3 className={open ? "" : "hide"}>Courses</h3>
+                        <Image src={discovery} alt="courses" className="header_img" />
                     </div>
                     <div className={open ? "header_category mt-50" : "header_category"}>
-                        <Image src={course} alt="courses" className="header_img" />
-                        <h3 className={open ? "" : "hide"}>Estegua U.L.</h3>
+                        <Image src={el} alt="courses" className="header_img" />
                     </div>
                     <div className="header_category">
-                        <Image src={course} alt="courses" className="header_img" />
-                        <h3 className={open ? "" : "hide"}>Research &<br/> Development</h3>
+                        <Image src={energy} alt="courses" className="header_img" />
                     </div>
                 </div>
             </div>

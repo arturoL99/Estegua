@@ -38,7 +38,6 @@ export default function Home(props: { courses: Course[] }) {
         <Header />
         <div className="test">
           <CoursesContainer courses={props.courses} />
-          <div className="sidebar"></div>
         </div>
       </main>
     </>
