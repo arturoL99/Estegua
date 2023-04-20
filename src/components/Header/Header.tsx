@@ -1,26 +1,33 @@
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import logo from "../../images/logo.webp";
 import discovery from "../../images/DISCOVERY.png";
 import el from "../../images/EL.png";
 import energy from "../../images/ENERGYWORK.png";
+import Link from "next/link";
 
-const Header = () => {
-    const [open, setOpen] = useState(true);
+type Props = {
+    state: boolean;
+}
+
+const Header: FC<Props> = ({ state }) => {
+    const [open, setOpen] = useState(state ? true : false);
     const [prevScrollPos, setPrevScrollPos] = useState(0);
 
     const handleScroll = () => {
         // find current scroll position
-        const currentScrollPos = window.pageYOffset;
+        if (state) {
+            const currentScrollPos = window.pageYOffset;
 
-        // set state based on location info (explained in more detail below)
-        setOpen((prevScrollPos > currentScrollPos && prevScrollPos - currentScrollPos > 70) || currentScrollPos < 10);
+            // set state based on location info (explained in more detail below)
+            setOpen((prevScrollPos > currentScrollPos && prevScrollPos - currentScrollPos > 70) || currentScrollPos < 10);
 
-        // set state to new scroll position
-        setPrevScrollPos(currentScrollPos);
+            // set state to new scroll position
+            setPrevScrollPos(currentScrollPos);
+        }
     };
 
-    // new useEffect:
+
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
 
@@ -29,19 +36,20 @@ const Header = () => {
     }, [prevScrollPos, open, handleScroll]);
     return (
         <>
-            <nav className={open ? "header header_open" : "header header_close"}>
+            <nav className={state ? open ? "header header_open" : "header header_close" : "header2"}>
                 <div className="header_logo_container">
-                    <Image src={logo} alt="estegua logo" className={open ? "header_logo header_logo_open" : "header_logo header_logo_close"} />
-
+                    <Link href={"/"} className={open ? "header_logo header_logo_open" : "header_logo header_logo_close"}>
+                        <Image src={logo} alt="estegua logo" className={open ? "header_logo header_logo_open" : "header_logo header_logo_close"} />
+                    </Link>
                     <div className={open ? "header_options header_options_open" : "header_options header_options_close"}>
                         <div className="header_category">
-                            <Image src={discovery} alt="courses" className="header_img" />
+                            <Image src={discovery} alt="courses" className="header_img hide" />
                         </div>
                         <div className={open ? "header_category mt-50" : "header_category"}>
-                            <Image src={el} alt="courses" className="header_img" />
+                            <Image src={el} alt="courses" className="header_img hide" />
                         </div>
                         <div className="header_category">
-                            <Image src={energy} alt="courses" className="header_img" />
+                            <Image src={energy} alt="courses" className="header_img hide" />
                         </div>
                     </div>
                 </div>

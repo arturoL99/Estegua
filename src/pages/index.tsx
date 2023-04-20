@@ -35,10 +35,9 @@ export default function Home(props: { courses: Course[] }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="main">
-        <Header />
+        <Header state={true} />
         <div className="test">
           <CoursesContainer courses={props.courses} />
-          <script type="text/javascript" id="lbscript1748866" src="https://lb.benchmarkemail.com//code/lbformnew.js?mFcQnoBFKMQ85rPrRMghMRcwvUXpuXVDRYyLpXHy4iMCdBXyU8FEHw%253D%253D"></script><noscript>Please enable JavaScript <br /><div><a href="https://www.benchmarkemail.com/email-marketing?utm_source=usersignupforms&utm_medium=customers&utm_campaign=usersignupforms" target="_new">Email Marketing </a> by Benchmark</div></noscript>
         </div>
       </main>
     </>

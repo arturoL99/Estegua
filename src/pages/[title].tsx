@@ -1,4 +1,5 @@
 import contentfulClient from "@/client/ContentfulClient";
+import Header from "@/components/Header/Header";
 import { Course } from "@/types/Course";
 import { mapCourse, mapCourses } from "@/utils/CourseUtils";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
@@ -35,23 +36,25 @@ export async function getStaticProps({ params }: any) {
 
 const CoursePage = (props: { course: Course }) => {
   console.log(props.course);
-  
-  
+
+
   return (
     <section className="coursePage">
-        <Image src={`https:${props.course.image.url}`} alt={props.course.title} width={300} height={300} className="coursePage_img" />
-            <div className="content_container">
-                <div className="content">
-                    <h1 className="my-20">{props.course.title}</h1>
-                    <div className="description">
-                        {documentToReactComponents(props.course.description)}
-                    </div>
-                </div>
-                <div className="course_cta">
-                    <Link href={props.course.url} className="my-20">{props.course.button}</Link>
-                    <small>{props.course.requirements}</small>
-                </div>
+      <Header state={false} />
+      <div className="pageContent">
+        <div className="content_container">
+          <div className="content">
+            <h1>{props.course.title}</h1>
+            <div className="px-5">
+              {documentToReactComponents(props.course.description)}
             </div>
+          </div>
+          <div className="course_cta">
+            <small>{props.course.requirements}</small>
+            <Link href={props.course.url} className="">{props.course.button}</Link>
+          </div>
+        </div>
+      </div>
     </section>
   );
 };
