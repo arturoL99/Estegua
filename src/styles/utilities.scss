@@ -1,5 +1,22 @@
+@import "./typography";
+
+html,
+body {
+  
+  scroll-behavior: smooth;
+}
+
 h1 {
+    font-family: "Mersad";
     font-size: 3rem;
+}
+
+h2{
+    font-family: "Mersad";
+}
+
+h3{
+    font-family: "Mersad";
 }
 
 p{
