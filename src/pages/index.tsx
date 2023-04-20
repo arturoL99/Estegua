@@ -18,10 +18,10 @@ export async function getStaticProps() {
   // console.log("================", contentfulBlog);
   // const blogs: Blog[] = mapBlogs(contentfulBlog);
   // const projects = mapBlog(contentfulBlog);
-  const contentfulCourses:any = await contentfulClient.getEntries({
+  const contentfulCourses: any = await contentfulClient.getEntries({
     content_type: "course",
   }).then((res) => res.items)
-  const courses:Course[] = mapCourses(contentfulCourses);
+  const courses: Course[] = mapCourses(contentfulCourses);
   return { props: { courses } };
 }
 
@@ -38,6 +38,7 @@ export default function Home(props: { courses: Course[] }) {
         <Header />
         <div className="test">
           <CoursesContainer courses={props.courses} />
+          <script type="text/javascript" id="lbscript1748866" src="https://lb.benchmarkemail.com//code/lbformnew.js?mFcQnoBFKMQ85rPrRMghMRcwvUXpuXVDRYyLpXHy4iMCdBXyU8FEHw%253D%253D"></script><noscript>Please enable JavaScript <br /><div><a href="https://www.benchmarkemail.com/email-marketing?utm_source=usersignupforms&utm_medium=customers&utm_campaign=usersignupforms" target="_new">Email Marketing </a> by Benchmark</div></noscript>
         </div>
       </main>
     </>

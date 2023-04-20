@@ -28,24 +28,26 @@ const Header = () => {
 
     }, [prevScrollPos, open, handleScroll]);
     return (
-        <nav className={open ? "header header_open" : "header header_close"}>
-            <div className="header_logo_container">
-                <Image src={logo} alt="estegua logo" className={open ? "header_logo header_logo_open" : "header_logo header_logo_close"} />
+        <>
+            <nav className={open ? "header header_open" : "header header_close"}>
+                <div className="header_logo_container">
+                    <Image src={logo} alt="estegua logo" className={open ? "header_logo header_logo_open" : "header_logo header_logo_close"} />
 
-                <div className={open ? "header_options header_options_open" : "header_options header_options_close"}>
-                    <div className="header_category">
-                        <Image src={discovery} alt="courses" className="header_img" />
-                    </div>
-                    <div className={open ? "header_category mt-50" : "header_category"}>
-                        <Image src={el} alt="courses" className="header_img" />
-                    </div>
-                    <div className="header_category">
-                        <Image src={energy} alt="courses" className="header_img" />
+                    <div className={open ? "header_options header_options_open" : "header_options header_options_close"}>
+                        <div className="header_category">
+                            <Image src={discovery} alt="courses" className="header_img" />
+                        </div>
+                        <div className={open ? "header_category mt-50" : "header_category"}>
+                            <Image src={el} alt="courses" className="header_img" />
+                        </div>
+                        <div className="header_category">
+                            <Image src={energy} alt="courses" className="header_img" />
+                        </div>
                     </div>
                 </div>
-            </div>
-
-        </nav>
+            </nav>
+            <div className={open ? "underHeader underHeader_open" : "underHeader underHeader_close"}></div>
+        </>
     )
 };
 

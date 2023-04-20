@@ -8,4 +8,5 @@ export type Course = {
     button:string;
     requirements:string;
     price:string;
+    lang:string;
   };

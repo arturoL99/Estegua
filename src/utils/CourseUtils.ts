@@ -17,6 +17,7 @@ export const mapCourses = (contentfulCourses: any[]) => {
         button: contentfulCourse.fields.button,
         requirements: contentfulCourse.fields.requirements,
         price: contentfulCourse.fields.price,
+        lang: contentfulCourse.fields.lang,
       };
       courses.push(course);
     });
@@ -35,6 +36,7 @@ export const mapCourses = (contentfulCourses: any[]) => {
         button: "contentfulCourse.fields.button",
         requirements: "contentfulCourse.fields.requirements",
         price: "contentfulCourse.fields.price",
+        lang: "contentfulCourse.fields."
       },
     ];
     return courses;
@@ -42,20 +44,32 @@ export const mapCourses = (contentfulCourses: any[]) => {
 };
 
 export const mapCourse = (contentfulCourse: any) => {
-  const course: Course = contentfulCourse.map((contentfulCourse: any) => {
-    const test = {
-      title: contentfulCourse.fields.title,
-      url: contentfulCourse.fields.url,
-      image: {
-        url: contentfulCourse.fields.image.fields.file.url,
-        height: contentfulCourse.fields.image.fields.file.details.image.height,
-        width: contentfulCourse.fields.image.fields.file.details.image.width,
-      },
-      description: contentfulCourse.fields.description,
-      button: contentfulCourse.fields.button,
-      requirements: contentfulCourse.fields.requirements,
-      price: contentfulCourse.fields.price,
-    };
-  });
+  const course: Course = {
+    title: contentfulCourse.fields.title,
+    url: contentfulCourse.fields.url,
+    image: {
+      url: contentfulCourse.fields.image.fields.file.url,
+      height: contentfulCourse.fields.image.fields.file.details.image.height,
+      width: contentfulCourse.fields.image.fields.file.details.image.width,
+    },
+    description: contentfulCourse.fields.description,
+    button: contentfulCourse.fields.button,
+    requirements: contentfulCourse.fields.requirements,
+    price: contentfulCourse.fields.price,
+    lang: contentfulCourse.fields.lang
+  };
+
   return course;
 };
+
+export const findLang = (courses: Course[]) => {
+  const coursesEng:Course[] = [];
+  const coursesIta:Course[] = [];
+
+  courses.map((course) => {
+    course.lang === "eng" ?
+    coursesEng.push(course) :
+    coursesIta.push(course)
+  });
+  return { coursesEng: coursesEng, coursesIta:coursesIta}
+}

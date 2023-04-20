@@ -9,12 +9,12 @@ import Link from "next/link";
 export async function getStaticPaths() {
   const contentfulCourses = await contentfulClient
     .getEntries({
-      content_type: "project",
+      content_type: "course",
     })
     .then((res) => res.items);
   const courses = mapCourses(contentfulCourses);
   const paths = courses.map((course) => ({
-    params: { name: course.title.toLocaleLowerCase() },
+    params: { title: course.title.toLocaleLowerCase() },
   }));
   return {
     paths,
@@ -26,7 +26,7 @@ export async function getStaticProps({ params }: any) {
   const contentfulCourse = await contentfulClient
     .getEntries({
       content_type: "course",
-      "fields.name[match]": params.name,
+      "fields.title[match]": params.title,
     })
     .then((res) => res.items);
   const course = mapCourse(contentfulCourse[0]);
@@ -38,8 +38,8 @@ const CoursePage = (props: { course: Course }) => {
   
   
   return (
-    <section className="">
-        <Image src={`https:${props.course.image.url}`} alt={props.course.title} width={300} height={300} className="course_img" />
+    <section className="coursePage">
+        <Image src={`https:${props.course.image.url}`} alt={props.course.title} width={300} height={300} className="coursePage_img" />
             <div className="content_container">
                 <div className="content">
                     <h1 className="my-20">{props.course.title}</h1>

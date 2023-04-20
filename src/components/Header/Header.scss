@@ -20,7 +20,6 @@
 
     &_logo {
         position: absolute;
-
         transition: all 0.5s ease-in-out;
 
         &_container {
@@ -82,5 +81,17 @@
         justify-content: center;
         width: 200px;
         height: 100px;
+    }
+}
+
+.underHeader {
+    transition: all 0.5s ease-in-out;
+
+    &_open {
+        height: 60vh;
+    }
+
+    &_close {
+        height: 15vh;
     }
 }
