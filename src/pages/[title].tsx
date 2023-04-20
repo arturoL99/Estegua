@@ -1,5 +1,6 @@
 import contentfulClient from "@/client/ContentfulClient";
 import Header from "@/components/Header/Header";
+import Social from "@/components/Social/Social";
 import { Course } from "@/types/Course";
 import { mapCourse, mapCourses } from "@/utils/CourseUtils";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
@@ -55,6 +56,9 @@ const CoursePage = (props: { course: Course }) => {
           </div>
         </div>
       </div>
+      <div className="socialContainer">
+        <Social />
+      </div>      
     </section>
   );
 };

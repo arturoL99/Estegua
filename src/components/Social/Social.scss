@@ -1,0 +1,22 @@
+.social{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    &-icon{
+        width: 30px;
+        height: auto;
+        transition: 500ms ease-in-out;
+
+        &:hover{
+            scale: 1.1;
+        }
+    }
+}
+
+.socialContainer{
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+}
