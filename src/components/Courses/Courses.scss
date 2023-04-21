@@ -7,15 +7,19 @@
     align-items: flex-start;
     justify-content: center;
     flex-direction: column;
-    // padding-top: 70vh;
     gap: 2.5vw 0;
     transition: all 500ms ease-in-out;
+    background-image: url("../../images/patternBg.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 
     &Group {
-        width: 100vw;
+        width: 95vw;
+        height: 30vw;
         display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
+        overflow-x: auto;
+        overflow-y: hidden;
     }
 }
 
@@ -31,6 +35,7 @@
     border: 1px solid rgb(255 255 255 / 5%);
     border-radius: 1.5rem;
     padding: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     transition: all 500ms;
 
     &:hover {
@@ -38,8 +43,7 @@
     }
 
     &_img {
-        width: 90%;
-        max-width: 90%;
+        width: auto;
         height: 100%;
         border-radius: 0.75rem;
     }
@@ -57,15 +61,15 @@
             font-size: 1.2rem;
             padding: 10px 30px;
             border: 1px solid #0689b2;
-            border-radius: 10px;
+            border-radius: 0.75rem;
             background-color: #0689b2;
             color: beige;
             transition: all 400ms ease-in-out;
 
             &:hover {
-                border: 1px solid black;
+                border: 1px solid #0689b2;
                 background-color: transparent;
-                color: black;
+                color: #0689b2;
             }
         }
 
@@ -93,6 +97,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        border-radius: 1rem;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     }
 }
@@ -141,22 +146,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: 500ms ease-in-out;
+    transition: 1000ms ease-in-out;
 
-    background-image: url("../../images/headerBg.webp");
+    background-image: url("../../images/esteguaBg.webp");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-position: center;
-
-    &:hover {
-
-        background-size: 120% 120%;
-
-    }
 }
 
-// .description{
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-// }
+.hovered{
+    background-size: 150% 150%;
+}

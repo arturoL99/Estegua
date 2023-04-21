@@ -7,10 +7,10 @@ import Link from "next/link";
 const Social: FC = () => {
     return (
         <section className="social">
-            <Link href={"/"}>
+            <Link target="_blank" href={"/"}>
                 <Image src={mail} alt="mail" className="social-icon" />
             </Link>
-            <Link href={"/"}>
+            <Link target="_blank" href={"https://www.instagram.com/estegua_project/"}>
                 <Image src={insta} alt="instagram" className="social-icon" />
             </Link>
         </section>

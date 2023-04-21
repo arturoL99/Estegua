@@ -6,6 +6,7 @@ import { mapCourse, mapCourses } from "@/utils/CourseUtils";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 
 export async function getStaticPaths() {
@@ -36,14 +37,13 @@ export async function getStaticProps({ params }: any) {
 }
 
 const CoursePage = (props: { course: Course }) => {
-  console.log(props.course);
+  const [hovered, setHovered] = useState(false);
 
-
-  return (
+   return (
     <section className="coursePage">
       <Header state={false} />
-      <div className="pageContent">
-        <div className="content_container">
+      <div className={hovered ? "pageContent hovered" : "pageContent"}>
+        <div className="content_container" onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
           <div className="content">
             <h1>{props.course.title}</h1>
             <div className="px-5">
