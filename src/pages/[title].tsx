@@ -45,13 +45,13 @@ const CoursePage = (props: { course: Course }) => {
       <div className={hovered ? "pageContent hovered" : "pageContent"}>
         <div className="content_container" onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
           <div className="content">
-            <h1>{props.course.title}</h1>
+            <h1 className="myb-20">{props.course.title}</h1>
             <div className="px-5">
               {documentToReactComponents(props.course.description)}
             </div>
           </div>
           <div className="course_cta">
-            <small>{props.course.requirements}</small>
+            <small className="my-20">{props.course.requirements} - {props.course.price}</small>
             <Link href={props.course.url} className="">{props.course.button}</Link>
           </div>
         </div>

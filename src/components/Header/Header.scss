@@ -10,12 +10,19 @@
     z-index: 10;
     transition: all 0.5s ease-in-out;
 
+    @media(max-width: 600px){
+        background: url("../../images/headerBg.webp") no-repeat 50.5% 54%;          
+    }
+
     &_open {
         height: 60vh;
     }
 
     &_close {
         height: 15vh;
+        @media(max-width: 600px){
+            height: 10vh         
+        }
     }
 
     &_logo {
@@ -44,6 +51,10 @@
             height: 100px;
             width: auto;
             transform: translate(-50%, -50%);
+            @media(max-width: 600px){
+                height: 60px; 
+                left: 25px;      
+            }
         }
 
     }
@@ -51,7 +62,6 @@
     &_options {
         position: absolute;
         width: 100%;
-        // border: 1px solid red;
         top: 100%;
         transform: translate(0%, -100%);
         display: flex;
@@ -75,7 +85,6 @@
     }
 
     &_category {
-        // border: 1px solid red;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -87,13 +96,17 @@
 
 .underHeader {
     transition: all 0.5s ease-in-out;
-
+    background-color: #e0dfe1;
     &_open {
         height: 60vh;
     }
 
     &_close {
         height: 15vh;
+
+        @media(max-width: 600px){
+            height: 20vh;        
+        }
     }
 }
 
@@ -104,4 +117,8 @@
     width: 100vw;
     height: 10VH;
     // background-color: #e0dfe1;
+
+    @media(max-width: 600px) {
+        top: 0;
+    }
 }

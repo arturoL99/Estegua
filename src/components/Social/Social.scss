@@ -19,4 +19,8 @@
     position: absolute;
     bottom: 30px;
     right: 30px;
+
+    @media(max-width: 600px) {
+        bottom: 10px;
+    }
 }
