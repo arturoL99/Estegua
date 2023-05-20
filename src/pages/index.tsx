@@ -22,10 +22,15 @@ export async function getStaticProps() {
     content_type: "course",
   }).then((res) => res.items)
   const courses: Course[] = mapCourses(contentfulCourses);
-  return { props: { courses } };
+  const about: any = await contentfulClient.getEntries({
+    content_type: "aboutMe",
+  }).then((res) => res.items)
+  
+  return { props: { courses, about } };
 }
 
-export default function Home(props: { courses: Course[] }) {
+export default function Home(props: { courses: Course[], about:any }) {
+  console.log("================", props.about[0]);
   return (
     <>
       <Head>
@@ -35,9 +40,9 @@ export default function Home(props: { courses: Course[] }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="main">
-        <Header state={true} />
+        <Header state={true} training={true} />
         <div className="test">
-          <CoursesContainer courses={props.courses} />
+          <CoursesContainer courses={props.courses} about={props.about[0]}/>
         </div>
       </main>
     </>

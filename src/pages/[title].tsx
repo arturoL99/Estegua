@@ -7,6 +7,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import logo from "../images/logo.webp";
 
 
 export async function getStaticPaths() {
@@ -39,13 +40,18 @@ export async function getStaticProps({ params }: any) {
 const CoursePage = (props: { course: Course }) => {
   const [hovered, setHovered] = useState(false);
 
-   return (
+  return (
     <section className="coursePage">
-      <Header state={false} />
+      {/* <Header state={false} training={false} /> */}
+      <div className="homeLogo">
+        <Link href={"/"} className="">
+          <Image src={logo} alt="estegua logo" className="logo" />
+        </Link>
+      </div>
       <div className={hovered ? "pageContent hovered" : "pageContent"}>
         <div className="content_container" onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
           <div className="content">
-            <h1 className="myb-20">{props.course.title}</h1>
+            <h1 className="my-20">{props.course.title.toUpperCase()}</h1>
             <div className="px-5">
               {documentToReactComponents(props.course.description)}
             </div>
@@ -58,7 +64,7 @@ const CoursePage = (props: { course: Course }) => {
       </div>
       <div className="socialContainer">
         <Social />
-      </div>      
+      </div>
     </section>
   );
 };

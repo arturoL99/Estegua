@@ -2,9 +2,11 @@ import { FC, useEffect, useState } from "react";
 import { Course } from "@/types/Course";
 import Courses from "./Courses";
 import { findLang } from "@/utils/CourseUtils";
+import AboutMe from "../AboutMe/AboutMe";
 
 type Props = {
     courses: Course[];
+    about:any;
 };
 
 type Corsi = {
@@ -12,15 +14,16 @@ type Corsi = {
     coursesIta: Course[];
 }
 
-const CoursesContainer: FC<Props> = ({ courses }) => {
+const CoursesContainer: FC<Props> = ({ courses, about }) => {
     const [corsi, setCorsi] = useState<Corsi>();
     useEffect(() => {
         setCorsi(findLang(courses));
     }, []);
 
     return (
+        <>
         <section className="courses px-50">
-            <h1 className="mx-50">Training Programs</h1>
+            {/* <h1 className="mx-50">TRAINING PROGRAMS</h1> */}
             <h3 className="mx-50">ENG:</h3>
             <div className="coursesGroup mx-50">
                 {
@@ -43,6 +46,8 @@ const CoursesContainer: FC<Props> = ({ courses }) => {
                 }
             </div>
         </section>
+        {/* <AboutMe about={about}/> */}
+        </>
     )
 };
 
