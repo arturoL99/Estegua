@@ -31,7 +31,6 @@
             position: relative;
             height: 100%;
             width: 100%;
-            // border: 1px solid red;
         }
 
         &_open {
@@ -42,6 +41,9 @@
             transform: translate(-50%, -50%);
             @media(max-width: 600px){
                 height: 75px;   
+            }
+            @media(max-width: 1300px) and (min-width: 600px) {
+                height: 150px;
             }
         }
 
