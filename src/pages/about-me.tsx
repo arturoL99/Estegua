@@ -12,9 +12,9 @@ import Hamburger from "@/components/Hamburger/Hamburger";
 import AboutMe from "@/components/AboutMe/AboutMe";
 
 export async function getStaticProps() {
-    const about: any = await contentfulClient.getEntries({
-        content_type: "aboutMe",
-      }).then((res) => res.items)
+  const about: any = await contentfulClient.getEntries({
+    content_type: "aboutMe",
+  }).then((res) => res.items)
   return { props: { about } };
 }
 
@@ -23,7 +23,13 @@ const AboutMePage = (props: { about: any }) => {
 
   return (
     <section className="aboutMePage">
-     <AboutMe about={props.about[0]} />
+      <Hamburger open={true} />
+      <div className="homeLogo">
+        <Link href={"/"} className="">
+          <Image src={logo} alt="estegua logo" className="logo" />
+        </Link>
+      </div>
+      <AboutMe about={props.about[0]} />
     </section>
   );
 };

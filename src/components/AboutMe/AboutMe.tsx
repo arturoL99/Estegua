@@ -15,19 +15,17 @@ const AboutMe: FC<Props> = ({ about }) => {
     const [hovered, setHovered] =useState(false);
     return (
         <section className="aboutMe">
-            <Hamburger open={true} />
-            <div className="homeLogo">
-                <Link href={"/"} className="">
-                    <Image src={logo} alt="estegua logo" className="logo" />
-                </Link>
-            </div>
-            <div className={hovered ? "pageContent hovered" : "pageContent"}>
+            <div className="aboutBg">
                 <div className="content_container" onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
                     <div className="content">
                         <div className="px-5">
                             {documentToReactComponents(about.fields.testo)}
                         </div>
                     </div>
+                    <div className="imgContainer">
+                        <Image src={`https:${about.fields.foto.fields.file.url}`} alt="Me" width={300} height={500} className="img" />
+                    </div>
+                    
                 </div>
             </div>
 
