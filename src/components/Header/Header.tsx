@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { FC, useEffect, useState } from "react";
 import logo from "../../images/logo.webp";
-import logo2 from "../../images/training.webp";
+import logo2 from "../../images/training.png";
 import discovery from "../../images/DISCOVERY.png";
 import el from "../../images/EL.png";
 import energy from "../../images/ENERGYWORK.png";

@@ -1,4 +1,5 @@
 @import "../../../src/styles/coloros";
+@import "../../../src/styles/typography";
 
 .courses {
     width: 100%;
@@ -17,11 +18,10 @@
     background-position: center;
 
     &Group {
-        width: 95vw;
-        height: 30vw;
+        width: 100vw;
+        height: fit-content;
         display: flex;
-        overflow-x: auto;
-        overflow-y: hidden;
+        justify-content: center;
 
         @media(max-width: 600px) {
             height: fit-content;
@@ -38,9 +38,9 @@
 }
 
 .course {
-    width: 25vw;
-    height: 25vw;
-    margin: 0 2.5vw;
+    width: fit-content;
+    height:fit-content;
+    // margin: 0 2.5vw;
     background-color: #f2f1f2;
     display: flex;
     align-items: center;
@@ -63,8 +63,8 @@
     }
 
     &_img {
-        width: auto;
-        height: 100%;
+        width: 85vw;
+        height: auto;
         border-radius: 0.75rem;
     }
 
@@ -242,4 +242,29 @@
     // @media(max-width: 1300px) and (min-width: 600px) {
     //     height: 80px;
     // }
+}
+
+.banner_cta{
+    position: absolute;
+    bottom: 24%;
+    background-color: $white;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: "SFP";
+    font-weight: 600;
+    border: 1px solid $black;
+    transition: 500ms ease-in-out;
+
+    &:hover{
+        transform: scale(1.1);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: $light;
+        border: 1px solid $light;
+    }
+}
+
+.flag{
+    position: absolute;
+    top: 40px;
+    right: 80px;
 }
