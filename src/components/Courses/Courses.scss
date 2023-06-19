@@ -71,6 +71,10 @@
             height: auto;
             width: 85vw;
         }
+
+        @media(min-width: 1500px) {
+            aspect-ratio: 16/7;
+        }
     }
 
     &_cta {

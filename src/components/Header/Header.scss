@@ -101,7 +101,10 @@
 
 .underHeader {
     transition: all 0.5s ease-in-out;
-    background-color: #e0dfe1;
+    background-image: url("../../images/patternBg.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     &_open {
         height: 60vh;
     }
