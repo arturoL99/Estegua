@@ -52,10 +52,10 @@
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     transition: all 500ms;
 
-    @media(max-width: 600px) {
-        height: 85vw;
-        width: 85vw;
-    }
+    // @media(max-width: 600px) {
+    //     height: 85vw;
+    //     width: 85vw;
+    // }
 
 
     &:hover {
@@ -63,9 +63,14 @@
     }
 
     &_img {
-        width: 85vw;
+        width: 90vw;
         height: auto;
         border-radius: 0.75rem;
+
+        @media(max-width: 600px) {
+            height: auto;
+            width: 85vw;
+        }
     }
 
     &_cta {
@@ -255,6 +260,10 @@
     border: 1px solid $black;
     transition: 500ms ease-in-out;
 
+    @media(max-width: 600px) {
+        bottom: 15%;
+    }
+
     &:hover{
         transform: scale(1.1);
         background-color: rgba(0, 0, 0, 0.5);
@@ -267,4 +276,8 @@
     position: absolute;
     top: 40px;
     right: 80px;
+
+    @media(max-width: 600px) {
+        right: 40px;
+    }
 }

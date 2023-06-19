@@ -30,7 +30,6 @@ export async function getStaticProps() {
 }
 
 export default function Home(props: { courses: Course[], about:any }) {
-  console.log("================", props.about[0]);
   return (
     <>
       <Head>
