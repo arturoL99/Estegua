@@ -15,7 +15,7 @@
     }
 
     &_close {
-        height: 15vh;
+        height: 10vh;
         @media(max-width: 600px){
             height: 10vh         
         }
@@ -50,7 +50,7 @@
         &_close {
             top: 50%;
             left: 20%;
-            height: 100px;
+            height: 75px;
             width: auto;
             transform: translate(-50%, -50%);
             @media(max-width: 600px){
@@ -107,7 +107,7 @@
     }
 
     &_close {
-        height: 30vh;
+        height: 25vh;
 
         @media(max-width: 600px){
             height: 20vh;        
