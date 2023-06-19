@@ -24,23 +24,23 @@ const CoursesContainer: FC<Props> = ({ courses, about }) => {
         <>
         <section className="courses px-50">
             {/* <h1 className="mx-50">TRAINING PROGRAMS</h1> */}
-            <h3 className="mx-50">ENG:</h3>
-            <div className="coursesGroup mx-50">
+            {/* <h3 className="mx-50">ENG:</h3> */}
+            <div className="coursesGroup">
                 {
                     corsi ?
                         corsi.coursesEng.map((course) => {
-                            return <Courses course={course} />
+                            return <Courses course={course} lang="eng" />
                         })
                         : <></>
                 }
             </div>
 
-            <h3 className="mx-50">ITA:</h3>
-            <div className="coursesGroup mx-50">
+            {/* <h3 className="mx-50">ITA:</h3> */}
+            <div className="coursesGroup">
                 {
                     corsi ?
                         corsi.coursesIta.map((course) => {
-                            return <Courses course={course} />
+                            return <Courses course={course} lang="ita" />
                         })
                         : <></>
                 }

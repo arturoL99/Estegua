@@ -1,11 +1,12 @@
 import Image from "next/image";
 import { FC, useEffect, useState } from "react";
 import logo from "../../images/logo.webp";
-import logo2 from "../../images/training.webp";
+import logo2 from "../../images/training.png";
 import discovery from "../../images/DISCOVERY.png";
 import el from "../../images/EL.png";
 import energy from "../../images/ENERGYWORK.png";
 import Link from "next/link";
+import Hamburger from "../Hamburger/Hamburger";
 
 type Props = {
     state: boolean;
@@ -38,7 +39,9 @@ const Header: FC<Props> = ({ state, training }) => {
     }, [prevScrollPos, open, handleScroll]);
     return (
         <>
+            
             <nav className={state ? open ? "header header_open" : "header header_close" : "header2"}>
+                <Hamburger open={open} />
                 <div className="header_logo_container">
                     <Link href={"/"} className={open ? "header_logo header_logo_open" : "header_logo header_logo_close"}>
                         <Image src={training ? logo2 : logo} alt="estegua logo" className={open ? "header_logo header_logo_open" : "header_logo header_logo_close"} />

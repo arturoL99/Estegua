@@ -8,6 +8,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import logo from "../images/logo.webp";
+import Hamburger from "@/components/Hamburger/Hamburger";
 
 
 export async function getStaticPaths() {
@@ -43,6 +44,7 @@ const CoursePage = (props: { course: Course }) => {
   return (
     <section className="coursePage">
       {/* <Header state={false} training={false} /> */}
+      <Hamburger open={true} />
       <div className="homeLogo">
         <Link href={"/"} className="">
           <Image src={logo} alt="estegua logo" className="logo" />

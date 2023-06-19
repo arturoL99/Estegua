@@ -9,4 +9,5 @@ export type Course = {
     requirements:string;
     price:string;
     lang:string;
+    mobileImage: ContentfulImg;
   };
