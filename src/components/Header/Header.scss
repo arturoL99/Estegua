@@ -1,3 +1,5 @@
+@import "../../styles/coloros"; 
+
 .header {
     position: fixed;
     top: 0;
@@ -101,16 +103,17 @@
 
 .underHeader {
     transition: all 0.5s ease-in-out;
-    background-image: url("../../images/patternBg.webp");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    background-color: $white;
+    // background-image: url("../../images/patternBg.webp");
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    // background-position: center;
     &_open {
-        height: 60vh;
+        height: 100vh;
     }
 
     &_close {
-        height: 25vh;
+        height: 20vh;
 
         @media(max-width: 600px){
             height: 20vh;        

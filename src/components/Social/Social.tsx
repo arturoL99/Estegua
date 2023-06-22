@@ -14,7 +14,7 @@ const Social: FC = () => {
             <Link target="_blank" href={"https://www.instagram.com/estegua_project/"}>
                 <Image src={insta} alt="instagram" className="social-icon" />
             </Link>
-            <Link target="_blank" href={"https://discord.gg/BPaFuu2z"}>
+            <Link target="_blank" href={"https://discord.gg/wPU5rkxeuB"}>
                 <Image src={discord} alt="discord" className="social-icon" />
             </Link>
         </section>

@@ -22,7 +22,7 @@ const CoursesContainer: FC<Props> = ({ courses, about }) => {
 
     return (
         <>
-        <section className="courses px-50">
+        <section className="courses px-100">
             {/* <h1 className="mx-50">TRAINING PROGRAMS</h1> */}
             {/* <h3 className="mx-50">ENG:</h3> */}
             <div className="coursesGroup">
