@@ -2,9 +2,7 @@ import { FC, useState } from "react";
 import { Course } from "@/types/Course";
 import Image from "next/image";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import Link from "next/link";
-import logo from "../../images/logo.webp"
-import Hamburger from "../Hamburger/Hamburger";
+import Social from "../Social/Social";
 
 type Props = {
     about: any;
@@ -12,7 +10,7 @@ type Props = {
 
 const AboutMe: FC<Props> = ({ about }) => {
     console.log(about);
-    const [hovered, setHovered] =useState(false);
+    const [hovered, setHovered] = useState(false);
     return (
         <section className="aboutMe">
             <div className="aboutBg">
@@ -22,10 +20,13 @@ const AboutMe: FC<Props> = ({ about }) => {
                             {documentToReactComponents(about.fields.testo)}
                         </div>
                     </div>
+                    <div className="socialContainer">
+                        <Social />
+                    </div>
                     <div className="imgContainer">
                         <Image src={`https:${about.fields.foto.fields.file.url}`} alt="Me" width={300} height={500} className="img" />
                     </div>
-                    
+
                 </div>
             </div>
 

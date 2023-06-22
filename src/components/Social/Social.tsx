@@ -2,6 +2,7 @@ import Image from "next/image";
 import { FC } from "react";
 import mail from "../../images/mail.png";
 import insta from "../../images/instagram.svg";
+import discord from "../../images/discord.svg";
 import Link from "next/link";
 
 const Social: FC = () => {
@@ -12,6 +13,9 @@ const Social: FC = () => {
             </a>
             <Link target="_blank" href={"https://www.instagram.com/estegua_project/"}>
                 <Image src={insta} alt="instagram" className="social-icon" />
+            </Link>
+            <Link target="_blank" href={"https://discord.gg/wPU5rkxeuB"}>
+                <Image src={discord} alt="discord" className="social-icon" />
             </Link>
         </section>
     )
