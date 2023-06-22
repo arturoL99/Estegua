@@ -8,12 +8,14 @@ export const mapCourses = (contentfulCourses: any[]) => {
         title: contentfulCourse.fields.title,
         url: contentfulCourse.fields.url,
         image: {
+          title:contentfulCourse.fields.image.fields.title,
           url: contentfulCourse.fields.image.fields.file.url,
           height:
             contentfulCourse.fields.image.fields.file.details.image.height,
           width: contentfulCourse.fields.image.fields.file.details.image.width,
         },
         mobileImage: {
+          title:contentfulCourse.fields.image.fields.title,
           url: contentfulCourse.fields.mobileImage.fields.file.url,
           height: contentfulCourse.fields.mobileImage.fields.file.details.image.height,
           width: contentfulCourse.fields.mobileImage.fields.file.details.image.width,
@@ -33,11 +35,13 @@ export const mapCourses = (contentfulCourses: any[]) => {
         title: "contentfulCourse.fields.title",
         url: "contentfulCourse.fields.subtitle",
         image: {
+          title:"test",
           url: "contentfulCourse.fields.image.fields.file.url",
           height: 1,
           width: 1,
         },
         mobileImage: {
+          title:"test",
           url: "contentfulCourse.fields.image.fields.file.url",
           height: 1,
           width: 1,
@@ -58,11 +62,13 @@ export const mapCourse = (contentfulCourse: any) => {
     title: contentfulCourse.fields.title,
     url: contentfulCourse.fields.url,
     image: {
+      title:contentfulCourse.fields.image.fields.title,
       url: contentfulCourse.fields.image.fields.file.url,
       height: contentfulCourse.fields.image.fields.file.details.image.height,
       width: contentfulCourse.fields.image.fields.file.details.image.width,
     },
     mobileImage: {
+      title:contentfulCourse.fields.image.fields.title,
       url: contentfulCourse.fields.mobileImage.fields.file.url,
       height: contentfulCourse.fields.mobileImage.fields.file.details.image.height,
       width: contentfulCourse.fields.mobileImage.fields.file.details.image.width,
