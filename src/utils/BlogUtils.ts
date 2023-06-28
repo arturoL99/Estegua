@@ -8,6 +8,7 @@ export const mapBlogs = (contentfulBlogs: any[]) => {
         title: contentfulBlog.fields.title,
         subtitle: contentfulBlog.fields.subtitle,
         image: {
+          title:contentfulBlog.fields.image.fields.title,
           url: contentfulBlog.fields.image.fields.file.url,
           height: contentfulBlog.fields.image.fields.file.details.image.height,
           width: contentfulBlog.fields.image.fields.file.details.image.width,
@@ -23,6 +24,7 @@ export const mapBlogs = (contentfulBlogs: any[]) => {
         title: "contentfulBlog.fields.title",
         subtitle: "contentfulBlog.fields.subtitle",
         image: {
+          title:"",
           url: "contentfulBlog.fields.image.fields.file.url",
           height: 1,
           width: 1,

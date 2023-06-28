@@ -1,15 +1,9 @@
 import contentfulClient from "@/client/ContentfulClient";
-import Header from "@/components/Header/Header";
-import Social from "@/components/Social/Social";
-import { Course } from "@/types/Course";
-import { mapCourse, mapCourses } from "@/utils/CourseUtils";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import Image from "next/image";
-import Link from "next/link";
 import { useEffect, useState } from "react";
-import logo from "../images/logo.webp";
-import Hamburger from "@/components/Hamburger/Hamburger";
-import AboutMe from "@/components/AboutMe/AboutMe";
+import { Word } from "@/types/Word";
+import { handleWordSearch, mapWord } from "@/utils/WordUtils";
+import Image from "next/image";
+import WordComp from "@/components/Word/Word";
 
 export async function getStaticProps() {
     const about: any = await contentfulClient.getEntries({
@@ -20,8 +14,10 @@ export async function getStaticProps() {
 
 const TestPage = (props: { about: any }) => {
     const [trailer, setTrailer] = useState<HTMLElement | null>();
+    const [word, setWord] = useState<Word | null>(null);
+    const [input, setInput] = useState<string>("");
 
-
+    
 
     useEffect(() => {
         setTrailer(document.getElementById("trailer"));
@@ -42,11 +38,17 @@ const TestPage = (props: { about: any }) => {
             })
         }
     }
-    console.log("ran", trailer)
 
     return (
         <section className="testPage">
             <div id="trailer"></div>
+            <form>
+                <input type="text" onChange={(e) => setInput(e.target.value)} />
+                <button onClick={(e) => handleWordSearch(e, input, setWord)}>Search</button>
+
+                <WordComp word={word} />
+            </form>
+            
         </section>
     );
 };
