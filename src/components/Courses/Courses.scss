@@ -54,6 +54,9 @@
 
     &:hover {
         transform: scale(1.01);
+        .viewMore{
+            opacity: 1;
+        }
     }
 
     &_img {
@@ -284,3 +287,42 @@
         top: 20px;
     }
 }
+
+.viewMore{
+    position: absolute;
+    bottom: 40px;
+    right: 80px;
+    opacity: 0;
+    transition: 500ms ease-in-out;
+    display: flex;
+
+    .view{
+        animation: color-animation 4s linear infinite;
+        transition: 500ms color;
+    }
+
+    .more{
+        animation: color-animation2 4s linear infinite;
+        transition: 500ms color;
+    }
+}
+
+@keyframes color-animation {
+    0%    {color: $red}
+    32%   {color: $red}
+    33%   {color: $blue}
+    65%   {color: $blue}
+    66%   {color: $yellow}
+    99%   {color: $yellow}
+    100%  {color: $red}
+  }
+
+  @keyframes color-animation2 {
+    0%    {color: $blue}
+    32%   {color: $blue}
+    33%   {color: $yellow}
+    65%   {color: $yellow}
+    66%   {color: $red}
+    99%   {color: $red}
+    100%  {color: $blue}
+  }

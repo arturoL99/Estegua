@@ -49,6 +49,10 @@ small {
 }
 
 .m {
+    &x-5{
+        margin: 0 5px;
+    }
+
     &x-50 {
         margin: 0 50px;
 
@@ -83,6 +87,10 @@ small {
         padding: 0 5px;
     }
 
+    &x-20 {
+        padding: 0 20px;
+    }
+
     &x-50 {
         padding: 50px 0;
     }
@@ -110,7 +118,6 @@ small {
     pointer-events: none;
     opacity: 0;
     transition: opacity 500ms ease;
-
     background-image: url("../images/logo.webp");
     background-position: center;
     background-size: cover;
@@ -125,5 +132,38 @@ small {
 .testPage:hover {
     #trailer {
         opacity: 1;
+    }
+}
+
+.homepage{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.section{
+    width: 90vw;
+    height: 50vh;
+    background-color: #fafafa;
+    color: $black;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+
+    h1{
+        font-size: 2.5rem;
+    }
+
+    &_l{
+        height: 90%;
+        width: 50%;
+        border-right: 1px solid $black;
+    }
+    
+    &_r{
+        height: 90%;
+        width: 50%;
     }
 }
