@@ -5,16 +5,17 @@ import contentfulClient from '@/client/ContentfulClient'
 import CoursesContainer from '@/components/Courses/CoursesContainer'
 import { Course } from '@/types/Course'
 import { mapCourses } from '@/utils/CourseUtils'
+import Link from 'next/link'
+import Image from 'next/image'
+import TrainingParagraph from '@/components/TrainingParagraph/TrainingParagraph'
+import Choq from '@/components/Choq/Choq'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export async function getStaticProps() {
-  // const contentfulBlog: any = await contentfulClient.getEntries({
-  //   content_type: "blog",
-  // }).then((res) => res.items)
-  // console.log("================", contentfulBlog);
-  // const blogs: Blog[] = mapBlogs(contentfulBlog);
-  // const projects = mapBlog(contentfulBlog);
+  const training: any = await contentfulClient.getEntries({
+    content_type: "trainigProgram",
+  }).then((res) => res.items[0].fields)
   const contentfulCourses: any = await contentfulClient.getEntries({
     content_type: "course",
   }).then((res) => res.items)
@@ -22,11 +23,12 @@ export async function getStaticProps() {
   const about: any = await contentfulClient.getEntries({
     content_type: "aboutMe",
   }).then((res) => res.items)
-  
-  return { props: { courses, about } };
+
+  return { props: { courses, about, training } };
 }
 
-export default function Home(props: { courses: Course[], about:any }) {
+export default function Home(props: { courses: Course[], about: any, training: any }) {
+  console.log("================", props.training);
   return (
     <>
       <Head>
@@ -37,9 +39,13 @@ export default function Home(props: { courses: Course[], about:any }) {
       </Head>
       <main className="main">
         <Header state={true} training={true} />
-        <div className="test">
-          <CoursesContainer courses={props.courses} about={props.about[0]}/>
-        </div>
+
+        <TrainingParagraph text={props.training} />
+
+        <CoursesContainer courses={props.courses} about={props.about[0]} />
+
+        <Choq />
+
       </main>
     </>
   )

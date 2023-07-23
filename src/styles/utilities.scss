@@ -3,7 +3,7 @@
 
 html,
 body {
-
+    background-color: $white;
     scroll-behavior: smooth;
 }
 
@@ -91,11 +91,11 @@ small {
         padding: 0 20px;
     }
 
-    &x-50 {
+    &y-50 {
         padding: 50px 0;
     }
 
-    &x-100 {
+    &y-100 {
         padding: 100px 0;
 
         @media(max-width: 600px) {

@@ -19,11 +19,11 @@ const Courses: FC<Props> = ({ course, lang }) => {
     console.log(course);
     return (
         <Link  href={course.title.toLowerCase()} className="course">
-            {
-                mobile ?
+            {/* {
+                mobile ? */}
                     <Image src={`https:${course.mobileImage.url}`} alt={course.title} width={900} height={900} className="course_img" /> :
-                    <Image src={`https:${course.image.url}`} alt={course.title} width={1600} height={900} className="course_img" />
-            }
+                    {/* <Image src={`https:${course.image.url}`} alt={course.title} width={1600} height={900} className="course_img" /> */}
+            {/* } */}
 
             <div className="flag">
                 <Image src={lang === "ita" ? ita : eng} alt={`${lang} flag`} />
@@ -31,10 +31,10 @@ const Courses: FC<Props> = ({ course, lang }) => {
             {/* <Link href={course.title.toLowerCase()} className="banner_cta">
                 View More
             </Link> */}
-            <div className="viewMore">
+            {/* <div className="viewMore">
                 <h3 className="mx-5 view">VIEW</h3>
                 <h3 className="more">MORE</h3>
-            </div>
+            </div> */}
         </Link>
 
     )

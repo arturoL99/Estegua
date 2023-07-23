@@ -1,0 +1,29 @@
+@import "../../../src/styles/coloros";
+@import "../../../src/styles/typography";
+
+.paragraph{
+    width: 80%;
+
+    @media(max-width: 600px) {
+        width: 100%;
+    }
+    &_container{
+        width: 100%;
+        background-color: $white;
+        color: $black;
+        padding: 100px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        h1{
+            text-align: center;
+            padding-bottom: 1.5rem;
+        }
+
+        p{
+            text-align: justify;
+            padding-bottom: 0.5rem;
+        }
+    }
+}
