@@ -10,7 +10,7 @@ const TrainingParagraph: FC<Props> = ({ text }) => {
         <section className="paragraph_container">
             <div className="paragraph">
                {documentToReactComponents(text.testo)} 
-            </div>            
+            </div>
         </section>
     )
 };

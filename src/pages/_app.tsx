@@ -7,6 +7,7 @@ import "../components/Hamburger/Hamburger.scss"
 import "../components/AboutMe/AboutMe.scss"
 import "../components/TrainingParagraph/TrainingParagraph.scss"
 import "../components/Choq/Choq.scss"
+import "../components/Challenge/Challenge.scss"
 import type { AppProps } from 'next/app'
 
 export default function App({ Component, pageProps }: AppProps) {
