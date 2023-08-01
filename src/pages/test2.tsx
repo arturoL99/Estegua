@@ -27,6 +27,7 @@ const TestPage2 = () => {
                 </div>
                 <div className="section_r"></div>
             </div>
+            
         </section>
     );
 };
