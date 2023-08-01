@@ -1,0 +1,9 @@
+@import "../../../src/styles/coloros";
+@import "../../../src/styles/typography";
+
+.choq{
+
+    &_container{
+        background-color: $white;
+    }
+}

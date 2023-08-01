@@ -1,0 +1,85 @@
+@import "../../../src/styles/coloros";
+@import "../../../src/styles/typography";
+
+.challenge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $white;
+
+    &_image {
+        max-width: 1024px;
+        width: 80%;
+        height: auto;
+        border-radius: 5px;
+        transition: all 500ms ease-in-out;
+
+        @media(max-width: 600px) {
+            width: 90%;
+        }
+
+        &:hover {
+            transform: scale(0.99);
+            cursor: pointer;
+        }
+    }
+
+    &_modal {
+        width: fit-content;
+        height: fit-content;
+        border-radius: 2px;
+        background-color: $white;
+        color: $black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+
+        @media(max-width: 600px) {
+            width: 100vw;
+            height: 100vh;
+        }
+
+        &_container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100vw;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        a {
+            margin-top: 20px;
+        }
+    }
+}
+
+.modal_text {
+    width: 70vw;
+
+    h2 {
+        margin: 10px 0;
+    }
+
+    p {
+        margin: 5px 0;
+    }
+}
+
+.modale_close {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
