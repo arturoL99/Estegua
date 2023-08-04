@@ -24,11 +24,6 @@ const AboutMePage = (props: { about: any }) => {
   return (
     <section className="aboutMePage">
       <Hamburger open={true} />
-      {/* <div className="homeLogo">
-        <Link href={"/"} className="">
-          <Image src={logo} alt="estegua logo" className="logo" />
-        </Link>
-      </div> */}
       <AboutMe about={props.about[0]} />
     </section>
   );
