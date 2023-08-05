@@ -27,12 +27,26 @@
         position: absolute;
         transition: all 0.5s ease-in-out;
         z-index: 100;
-        // filter: drop-shadow(0 0 0.1rem rgb(8, 7, 7));
 
         &_container {
             position: relative;
             height: 100%;
             width: 100%;
+
+            .icon{
+                height: 40px;
+                width: auto;
+                position: absolute;
+                bottom: 10px;
+                left: 50%;
+                transform: translate(-50%, 0);
+                opacity: 1;
+                transition: 500ms ease-in-out;
+            }
+
+            .close{
+                opacity: 0;
+            }
         }
 
         &_open {
@@ -104,10 +118,6 @@
 .underHeader {
     transition: all 0.5s ease-in-out;
     background-color: $white;
-    // background-image: url("../../images/patternBg.webp");
-    // background-repeat: no-repeat;
-    // background-size: cover;
-    // background-position: center;
     &_open {
         height: 100vh;
     }
@@ -127,7 +137,6 @@
     left: 0px;
     width: 100vw;
     height: 10VH;
-    // background-color: #e0dfe1;
 
     @media(max-width: 600px) {
         top: 0;

@@ -7,6 +7,7 @@ import el from "../../images/EL.png";
 import energy from "../../images/ENERGYWORK.png";
 import Link from "next/link";
 import Hamburger from "../Hamburger/Hamburger";
+import scroll from "../../images/icons8-scroll.webp"
 
 type Props = {
     state: boolean;
@@ -21,10 +22,8 @@ const Header: FC<Props> = ({ state, training }) => {
         // find current scroll position
         if (state) {
             const currentScrollPos = window.pageYOffset;
-
-            // set state based on location info (explained in more detail below)
+            // set state based on location info
             setOpen((prevScrollPos > currentScrollPos && prevScrollPos - currentScrollPos > 70) || currentScrollPos < 10);
-
             // set state to new scroll position
             setPrevScrollPos(currentScrollPos);
         }
@@ -57,6 +56,7 @@ const Header: FC<Props> = ({ state, training }) => {
                             <Image src={energy} alt="courses" className="header_img hide" />
                         </div>
                     </div>
+                    <Image src={scroll} alt="scroll" className={open ? "icon" : "icon close"}/>
                 </div>
             </nav>
             <div className={open ? "underHeader underHeader_open" : "underHeader underHeader_close"}></div>
