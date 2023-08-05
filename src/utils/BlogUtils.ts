@@ -17,7 +17,6 @@ export const mapBlogs = (contentfulBlogs: any[]) => {
       };
       blogs.push(blog);
     });
-    console.log("QAAAAAAAAAAAA", blogs)
     return blogs;
   }else{
     const blogs: Blog[] = [{

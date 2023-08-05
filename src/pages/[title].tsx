@@ -58,7 +58,7 @@ const CoursePage = (props: { course: Course }) => {
               {documentToReactComponents(props.course.description)}
             </div>
           </div>
-          <div className="cta mt-20">
+          <div className="course_cta">
             <small className="my-20">{props.course.requirements} - {props.course.price}</small>
             <Link href={props.course.url} className="">{props.course.button}</Link>
           </div>

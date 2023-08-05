@@ -1,10 +1,5 @@
-import { FC, useEffect, useState } from "react";
-import { Course } from "@/types/Course";
+import { FC } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import ita from "../../images/icons8-italy-48.png";
-import eng from "../../images/icons8-english-48.png";
-import { checkMobile } from "@/utils/Utils";
 import { Word } from "@/types/Word";
 
 type Props = {
@@ -12,7 +7,6 @@ type Props = {
 };
 
 const WordComp: FC<Props> = ({ word }) => {
-    console.log(word);
     if (word) {
         return (
 

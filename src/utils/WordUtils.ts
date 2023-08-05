@@ -21,7 +21,6 @@ export const handleWordSearch = async (e:any, input:string, setWord:any) => {
         content_type: "word",
         "fields.word[match]": input,
     }).then((res) => res.items);
-    console.log(contentWord);
     contentWord.length !== 0 ? 
     setWord(mapWord(contentWord[0])) :
     setWord(undefined);

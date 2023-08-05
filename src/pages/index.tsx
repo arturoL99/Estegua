@@ -5,8 +5,6 @@ import contentfulClient from '@/client/ContentfulClient'
 import CoursesContainer from '@/components/Courses/CoursesContainer'
 import { Course } from '@/types/Course'
 import { mapCourses } from '@/utils/CourseUtils'
-import Link from 'next/link'
-import Image from 'next/image'
 import TrainingParagraph from '@/components/TrainingParagraph/TrainingParagraph'
 import Choq from '@/components/Choq/Choq'
 import Challenge from '@/components/Challenge/Challenge'
@@ -30,7 +28,6 @@ export async function getStaticProps() {
 }
 
 export default function Home(props: { courses: Course[], challenge: any, training: any }) {
-  console.log("================", props.challenge);
   return (
     <>
       <Head>

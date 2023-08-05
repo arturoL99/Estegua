@@ -8,7 +8,6 @@ type Props = {
 };
 
 const AboutMe: FC<Props> = ({ about }) => {
-    console.log(about);
     const [hovered, setHovered] = useState(false);
     return (
         <section className="aboutMe">
