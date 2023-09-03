@@ -1,0 +1,27 @@
+.boostHeader {
+    width: 80%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    .headerImage {
+        width: 100%;
+        max-width: 990px;
+        height: 133px;
+        background-image: url("https://moosendimages.imgix.net/3d331f4c-4577-18b3-6506-fae81a3439af/545310e7d37b461e8e7fb984e104f6ed/art-0605.jpg?auto=format%2Ccompress&dpr=1&fit=clip&ixjsv=2.2.4&q=100&rect=0%2C192%2C1920%2C256&w=997");
+    }
+
+    .headerLogo{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .logo{
+            max-width: 172px;
+            height: auto;
+        }
+    }
+}

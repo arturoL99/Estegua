@@ -1,0 +1,23 @@
+@import "../../styles/coloros";
+
+.boostPioner{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    border: 1px solid red;
+
+    .big{
+        font-size: 28px;
+        font-weight: 900px;
+    }
+}
+
+.boostPrograms{
+    width: 100%;
+    height: 25%;
+    background-color: $black;
+}

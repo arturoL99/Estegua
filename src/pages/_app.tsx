@@ -9,6 +9,9 @@ import "../components/TrainingParagraph/TrainingParagraph.scss"
 import "../components/Choq/Choq.scss"
 import "../components/Challenge/Challenge.scss"
 import "../components/Footer/Footer.scss"
+import "../components/BoostHeader/BoostHeader.scss"
+import "../components/BoostWebinar/BoostWebinar.scss"
+import "../components/BoostPioner/BoostPioner.scss"
 import type { AppProps } from 'next/app'
 
 export default function App({ Component, pageProps }: AppProps) {
