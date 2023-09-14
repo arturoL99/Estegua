@@ -1,12 +1,13 @@
-import { FC } from "react";
-import logo from "../../images/logo.webp";
-import Link from "next/link";
-import Image from 'next/image'
-import Social from "../Social/Social";
-import { url } from "inspector";
+import sendEmail from "@/client/EmailClient";
+import { FC, useRef, useState } from "react";
 
 
 const BoostWebinar: FC = () => {
+
+    const [name, setName] = useState<string>("");
+    const [email, setEmail] = useState<string>("");
+    const form = useRef();
+
     return (
         <section className="boostWebinar">
             <div className="formContainer">
@@ -14,9 +15,9 @@ const BoostWebinar: FC = () => {
                     <h1>FREE WEBINAR</h1>
                     <h3>How to change your perception of reality with a new mind-shifting paradigm</h3>
                 </div>
-                <form className="webinarForm my-20">
-                    <input className="webinarInput" placeholder="Name" />
-                    <input className="webinarInput" placeholder="Email" />
+                <form className="webinarForm my-20" onSubmit={(e) => sendEmail(e, name, email)}>
+                    <input className="webinarInput" type="text" name="name" placeholder="Name" onChange={(e) => setName(e.target.value)} required />
+                    <input className="webinarInput" type="email" name="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} required/>
                     <button className="webinarInput">SAVE MY SPOT</button>
                 </form>
                 <div className="webinarDescription">

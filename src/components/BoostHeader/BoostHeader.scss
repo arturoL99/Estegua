@@ -1,3 +1,5 @@
+@import "../../styles/coloros";
+
 .boostHeader {
     width: 80%;
     height: fit-content;
@@ -23,5 +25,9 @@
             max-width: 172px;
             height: auto;
         }
+    }
+
+    h3{
+        color: $yellow;
     }
 }

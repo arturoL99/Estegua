@@ -1,9 +1,8 @@
 import { FC } from "react";
-import logo from "../../images/logo.webp";
 import Link from "next/link";
 import Image from 'next/image'
-import Social from "../Social/Social";
-import { url } from "inspector";
+import BoostSmall from "../BoostSmall/BoostSmall";
+import BoostAbout from "../BoostAbout/BoostAbout";
 
 
 const BoostPioner: FC = () => {
@@ -15,8 +14,10 @@ const BoostPioner: FC = () => {
             <p className="my-10">Estegua offers revolutionary tools to expand the mind through <br/> energy cultivation practices and a new mind-shifting paradigm</p>
         </section>
         <section className="boostPrograms">
-
+            <BoostSmall title="Energy Work" text={`How do you master the Self? Why is it so important in today's world?`} />
+            <BoostSmall title="A New Language" text="As we make big leaps forward in the field of technology, it's time to revolutionize our minds as well!" />
         </section>
+        <BoostAbout />
         </>
     )
 };
