@@ -8,6 +8,11 @@
     align-items: center;
     justify-content: flex-start;
 
+    @media(max-width: 600px) {
+        width: 95%;
+        
+    }
+
     .headerImage {
         width: 100%;
         max-width: 990px;
@@ -24,9 +29,19 @@
         .logo{
             max-width: 172px;
             height: auto;
+            margin: 40px 0;
+
+            @media(max-width: 1500px) {
+                margin: 20px 0;
+            }
         }
     }
 
+    h1{
+        @media(max-width: 600px) {
+            font-size: 2rem;
+        }
+    }
     h3{
         color: $yellow;
     }
