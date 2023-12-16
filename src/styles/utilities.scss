@@ -75,6 +75,10 @@ small {
         margin-top: 50px;
     }
 
+    &t-100 {
+        margin-top: 100px;
+    }
+
     &y-50 {
         margin: 50px 0;
     }
@@ -163,13 +167,34 @@ small {
     display: flex;
     align-items: center;
     flex-direction: column;
-    gap: 2rem;
+    background-color: $white;
+    color: $black;
+
+    .quote {
+        font-family: "SFPBOLD";
+        width: 70%;
+        font-style: italic;
+        text-align: center;
+
+        h4 {
+            font-size: 1.2rem;
+        }
+    }
+
+
+}
+
+.intro_container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 .section {
-    width: 90vw;
+    width: 30vw;
     height: 50vh;
-    background-color: #fafafa;
+    background-color: $red;
     color: $black;
     display: flex;
     align-items: center;
@@ -188,6 +213,32 @@ small {
     &_r {
         height: 90%;
         width: 50%;
+    }
+}
+
+.home_paragraphs{
+    width: 100%;
+    .paragraph{
+        display: flex;
+        justify-content: center;
+        gap: 5%;
+        width: 100%;
+        height: 50vh;
+        .image{
+            background-color: $red;
+            width: 30%;
+        }
+        .text{
+            width: 30%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+    }
+
+    .inverted{
+        flex-direction: row-reverse;
     }
 }
 
@@ -225,7 +276,8 @@ small {
             height: fit-content;
         }
     }
-    .secondSection{
+
+    .secondSection {
         width: 100vw;
         height: 100vh;
         display: flex;
@@ -237,4 +289,17 @@ small {
             height: 200vh;
         }
     }
+}
+
+.l_red{
+    border-left: 3px solid $red;
+}
+.r_red{
+    border-right: 3px solid $red;
+}
+.r_yellow{
+    border-right: 3px solid $yellow;
+}
+.r_blue{
+    border-right: 3px solid $blue;
 }

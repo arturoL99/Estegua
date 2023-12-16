@@ -12,6 +12,7 @@ import "../components/Footer/Footer.scss"
 import "../components/BoostHeader/BoostHeader.scss"
 import "../components/BoostWebinar/BoostWebinar.scss"
 import "../components/BoostPioner/BoostPioner.scss"
+import "../components/HeaderNew/HeaderNew.scss"
 import type { AppProps } from 'next/app'
 
 export default function App({ Component, pageProps }: AppProps) {

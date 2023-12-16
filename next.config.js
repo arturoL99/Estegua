@@ -7,6 +7,6 @@ module.exports = nextConfig
 
 module.exports = {
   images: {
-    domains: ["www.seekpng.com", "images.ctfassets.net", "choq.postaffiliatepro.com", "moosendimages.imgix.net"],
+    domains: ["www.seekpng.com", "images.ctfassets.net", "choq.postaffiliatepro.com", "moosendimages.imgix.net", "placehold.co"],
   },
 }

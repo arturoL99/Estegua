@@ -15,7 +15,7 @@ const inter = Inter({ subsets: ['latin'] })
 export async function getStaticProps() {
   const training: any = await contentfulClient.getEntries({
     content_type: "trainigProgram",
-  }).then((res) => res.items[0].fields)
+  }).then((res) => res.items[1].fields)
   const contentfulCourses: any = await contentfulClient.getEntries({
     content_type: "course",
   }).then((res) => res.items)
@@ -28,6 +28,7 @@ export async function getStaticProps() {
 }
 
 export default function Home(props: { courses: Course[], challenge: any, training: any }) {
+  console.log(props.training)
   return (
     <>
       <Head>
@@ -41,7 +42,7 @@ export default function Home(props: { courses: Course[], challenge: any, trainin
 
         <TrainingParagraph text={props.training} />
 
-        <Challenge props={props.challenge}/>
+        {/* <Challenge props={props.challenge}/> */}
         
         <CoursesContainer courses={props.courses} />
 
